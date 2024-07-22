@@ -992,6 +992,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2056248527}
     m_Modifications:
+    - target: {fileID: 3332747500362384281, guid: 01940e0d1c2cf1f4cb92d1f64c73de0b,
+        type: 3}
+      propertyPath: rewardMultiplierIncreaseRate
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3332747501028363169, guid: 01940e0d1c2cf1f4cb92d1f64c73de0b,
         type: 3}
       propertyPath: m_Camera
