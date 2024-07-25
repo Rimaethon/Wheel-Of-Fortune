@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3481777244d74837988c3208655d5f0a, type: 3}
+  m_Name: Baseball Cap Helmet
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: d470b1d51b02f454a83fe895efe17aa8, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: Icon
+      Entry: 10
+      Data: 0
+    - Name: AcquireType
+      Entry: 3
+      Data: 5
+    - Name: ItemType
+      Entry: 3
+      Data: 1
+    - Name: Name
+      Entry: 1
+      Data: Baseball Cap
+    - Name: Price
+      Entry: 3
+      Data: 0
+  ItemID: 0
+  ArmorType: 0
