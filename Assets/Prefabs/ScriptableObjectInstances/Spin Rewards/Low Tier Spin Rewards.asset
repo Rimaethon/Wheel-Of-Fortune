@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b439a0cbb2f2b6142a20aadd8d56e159, type: 3}
+  m_Name: Low Tier Spin Rewards
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  Database:
+  - sprite: {fileID: 21300000, guid: 8487c5719cdfe9440a5fa391fb8d25e8, type: 3}
+    ItemName: Gold Savana
+    BaseChance: 0.095
+    BaseAmount: 7
+    ItemData: {fileID: 11400000, guid: 2532bf243736d74448f0cbcbb6fbaa9b, type: 2}
+  - sprite: {fileID: 21300000, guid: 47d87edd6cfcfc34f9ccf69bf5e0d964, type: 3}
+    ItemName: Neurostim
+    BaseChance: 0.093
+    BaseAmount: 3
+    ItemData: {fileID: 11400000, guid: e71c834cc37b0b54a94d311ff3f7c4c0, type: 2}
+  - sprite: {fileID: 21300000, guid: acf7ec64e2d1dc3499013c2b8f72adde, type: 3}
+    ItemName: Knife Upgrade Point
+    BaseChance: 0.115
+    BaseAmount: 15
+    ItemData: {fileID: 11400000, guid: 8aa5cfaab8a70014aa24085fd1df1bef, type: 2}
+  - sprite: {fileID: 21300000, guid: 5f30b9ac31813fc48877153588563a01, type: 3}
+    ItemName: Pistol Upgrade Point
+    BaseChance: 0.076
+    BaseAmount: 12
+    ItemData: {fileID: 11400000, guid: 5ae1ca1270b7d9240be1bab7fe5c8e89, type: 2}
+  - sprite: {fileID: 21300000, guid: 0df238c613448184999d57000adeb3f1, type: 3}
+    ItemName: Bronze Chest
+    BaseChance: 0.083
+    BaseAmount: 1
+    ItemData: {fileID: 11400000, guid: 20df2d9d4875158409ce82add03c7c0d, type: 2}
+  - sprite: {fileID: 21300000, guid: c5e156e91bd89c149bf2933dcf257fa2, type: 3}
+    ItemName: Gold
+    BaseChance: 0.06
+    BaseAmount: 10
+    ItemData: {fileID: 11400000, guid: c1dc5a47980692f4d9307b666cbf4f97, type: 2}
+  - sprite: {fileID: 21300000, guid: 52462d6b365cd374dbd4333f1611d0b2, type: 3}
+    ItemName: Cash
+    BaseChance: 0.083
+    BaseAmount: 500
+    ItemData: {fileID: 11400000, guid: faf6ace1d61a12b49b1d422f67089c1a, type: 2}
+  - sprite: {fileID: 21300000, guid: cdc5bb9c85218bd40b70fb82bb7012c8, type: 3}
+    ItemName: Shotgun Upgrade Point
+    BaseChance: 0
+    BaseAmount: 5
+    ItemData: {fileID: 11400000, guid: 37dc3b0eeb8f82645a77d63267fa4ccc, type: 2}

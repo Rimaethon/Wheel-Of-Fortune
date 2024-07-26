@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b439a0cbb2f2b6142a20aadd8d56e159, type: 3}
+  m_Name: Mid Tier Spin Rewards
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  Database:
+  - sprite: {fileID: 21300000, guid: 8487c5719cdfe9440a5fa391fb8d25e8, type: 3}
+    ItemName: Gold Savana
+    BaseChance: 0.095
+    BaseAmount: 7
+    ItemData: {fileID: 11400000, guid: 2532bf243736d74448f0cbcbb6fbaa9b, type: 2}
+  - sprite: {fileID: 21300000, guid: 950a9c51c69d46649a5a95ade9d6b3d2, type: 3}
+    ItemName: Regenerator
+    BaseChance: 0.093
+    BaseAmount: 10
+    ItemData: {fileID: 11400000, guid: 0a073cb8d2f016e40a33015cdf6afc42, type: 2}
+  - sprite: {fileID: 21300000, guid: d49dc632e04b96141a7fc2c9390c62a6, type: 3}
+    ItemName: Flash
+    BaseChance: 0.115
+    BaseAmount: 25
+    ItemData: {fileID: 11400000, guid: 7fff095f135b9ea4597cf7cb71efdf07, type: 2}
+  - sprite: {fileID: 21300000, guid: f7b11bee6fd6b54478d1085bd45552e6, type: 3}
+    ItemName: Rifle Upgrade Point
+    BaseChance: 0.076
+    BaseAmount: 40
+    ItemData: {fileID: 11400000, guid: b7b5f14312509234a99fb11bddaa4bd7, type: 2}
+  - sprite: {fileID: 21300000, guid: 58f3354fb9b688b408e661a13ae5325e, type: 3}
+    ItemName: Big Chest
+    BaseChance: 0.083
+    BaseAmount: 2
+    ItemData: {fileID: 11400000, guid: df4e602c82a9d2d4292eeba104b3758d, type: 2}
+  - sprite: {fileID: 21300000, guid: c5e156e91bd89c149bf2933dcf257fa2, type: 3}
+    ItemName: Gold
+    BaseChance: 0.06
+    BaseAmount: 50
+    ItemData: {fileID: 11400000, guid: c1dc5a47980692f4d9307b666cbf4f97, type: 2}
+  - sprite: {fileID: 21300000, guid: 52462d6b365cd374dbd4333f1611d0b2, type: 3}
+    ItemName: Cash
+    BaseChance: 0.083
+    BaseAmount: 2500
+    ItemData: {fileID: 11400000, guid: faf6ace1d61a12b49b1d422f67089c1a, type: 2}
+  - sprite: {fileID: 21300000, guid: 451c28fc9362c7a4e834f73b0af60da0, type: 3}
+    ItemName: 
+    BaseChance: 0
+    BaseAmount: 15
+    ItemData: {fileID: 11400000, guid: c4b8573b50d7eaa4eb0a1c844e8907f2, type: 2}

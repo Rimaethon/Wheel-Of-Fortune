@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7164e4444eb74e9883c09429d1649a7b, type: 3}
+  m_Name: Upgrade Point Database
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 11400000, guid: 5519a74113a9a654da18e6537e680a72, type: 2}
+    - {fileID: 11400000, guid: 8aa5cfaab8a70014aa24085fd1df1bef, type: 2}
+    - {fileID: 11400000, guid: 5ae1ca1270b7d9240be1bab7fe5c8e89, type: 2}
+    - {fileID: 11400000, guid: b7b5f14312509234a99fb11bddaa4bd7, type: 2}
+    - {fileID: 11400000, guid: 37dc3b0eeb8f82645a77d63267fa4ccc, type: 2}
+    - {fileID: 11400000, guid: 0e0eb5016db117e449a17048e703cee1, type: 2}
+    - {fileID: 11400000, guid: 5b2db8cf1eae58241a55831926cf470e, type: 2}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: ItemDatabase
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[Data.Scriptable_Objects.Abstract.AbstractItemDataSO,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  UpgradePointDataList:
+  - {fileID: 11400000, guid: 5519a74113a9a654da18e6537e680a72, type: 2}
+  - {fileID: 11400000, guid: 8aa5cfaab8a70014aa24085fd1df1bef, type: 2}
+  - {fileID: 11400000, guid: 5ae1ca1270b7d9240be1bab7fe5c8e89, type: 2}
+  - {fileID: 11400000, guid: b7b5f14312509234a99fb11bddaa4bd7, type: 2}
+  - {fileID: 11400000, guid: 37dc3b0eeb8f82645a77d63267fa4ccc, type: 2}
+  - {fileID: 11400000, guid: 0e0eb5016db117e449a17048e703cee1, type: 2}
+  - {fileID: 11400000, guid: 5b2db8cf1eae58241a55831926cf470e, type: 2}
