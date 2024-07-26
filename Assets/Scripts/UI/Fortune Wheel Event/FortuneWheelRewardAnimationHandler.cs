@@ -11,10 +11,13 @@ namespace UI.Fortune_Wheel_Event
 	{
 		[SerializeField]
 		private float distributionRange = 300f;
+
 		[SerializeField]
 		private float distributionDuration = 1f;
+
 		[SerializeField]
 		private float movementDuration = 0.8f;
+
 		private readonly List<RectTransform> iconRectTransforms = new List<RectTransform>();
 		private readonly List<Image> itemImages = new List<Image>();
 		private readonly Random random = new Random();

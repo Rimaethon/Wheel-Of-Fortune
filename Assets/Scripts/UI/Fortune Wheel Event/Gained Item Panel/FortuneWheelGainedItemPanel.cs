@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Data;
 using UnityEngine;
@@ -9,8 +8,10 @@ namespace UI.Fortune_Wheel_Event.Gained_Item_Panel
 	{
 		[SerializeField]
 		private GameObject gainedItemPrefab;
+
 		[SerializeField]
 		private RectTransform content;
+
 		private readonly List<FortuneWheelGainedItemView> gainedItemViewList = new List<FortuneWheelGainedItemView>();
 		private float itemHeight;
 		private float lastItemYPos = 280;

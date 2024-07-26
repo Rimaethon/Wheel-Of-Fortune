@@ -157,12 +157,10 @@ namespace UI.Fortune_Wheel_Event.Level_Panel
 			{
 				return superLevelColor;
 			}
-
 			if (level % safeLevelCoefficient == 0 || level == 1)
 			{
 				return safeLevelColor;
 			}
-
 			return normalLevelColor;
 		}
 	}

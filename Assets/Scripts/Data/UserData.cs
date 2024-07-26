@@ -7,11 +7,8 @@ namespace Data
 	[Serializable]
 	public class UserData
 	{
-		public int GoldAmount;
-		public int CashAmount;
 		public string Name;
 		public PlayerInventoryData playerInventoryData;
-
 		public UserData()
 		{
 			playerInventoryData = new PlayerInventoryData();
@@ -28,9 +25,6 @@ namespace Data
 							   {
 								   Amount = 12000
 							   });
-
-			CashAmount = 12000;
-			GoldAmount = 4000;
 		}
 	}
 }

@@ -70,10 +70,6 @@ namespace UI.Fortune_Wheel_Event
 		private void Awake()
 		{
 			CheckComponents();
-			if (rewardElements.Count == 0)
-			{
-				rewardElements = wheelTransform.GetComponentsInChildren<FortuneWheelItemView>().ToList();
-			}
 			numberOfSlots = rewardElements.Count;
 			bombData = new SpinRewardData
 			{
@@ -82,13 +78,13 @@ namespace UI.Fortune_Wheel_Event
 				BaseChance = bombChance,
 				BaseAmount = 0
 			};
-
 		}
 
 		private void OnValidate()
 		{
 			CheckComponents();
 		}
+
 		private void CheckComponents()
 		{
 			if (spinButton == null)
@@ -174,7 +170,7 @@ namespace UI.Fortune_Wheel_Event
 		{
 			int rotateIndex = (int) Mathf.Abs((wheelTransform.rotation.eulerAngles.z + angle_between_prizes / 2) % 360 / angle_between_prizes);
 			_currentLevel++;
-			if (rotateIndex == 7)
+			if (rotateIndex == 7&&!_isSafeLevel)
 			{
 				EventManager.Instance.Broadcast(GameEvents.OnFortuneWheelBombExploded);
 				_isSpinning = false;
