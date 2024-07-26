@@ -387,6 +387,37 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &658036417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 658036418}
+  m_Layer: 0
+  m_Name: -------------------------UI------------------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &658036418
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658036417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 81.35498, y: 52.96797, z: 104.48811}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +591,7 @@ Transform:
   - {fileID: 8898807336688497446}
   - {fileID: 1100165168}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &444901155314889856
 PrefabInstance:
@@ -574,21 +605,6 @@ PrefabInstance:
       propertyPath: canvasToOpen
       value: 
       objectReference: {fileID: 1100165167}
-    - target: {fileID: 444901154715478013, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_Name
-      value: Fortune Wheel Title
-      objectReference: {fileID: 0}
-    - target: {fileID: 444901154715478015, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_Maskable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 444901154715478015, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1005488716315117875, guid: 87628e50fcc14a44695a5e27b8b59727,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -669,46 +685,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3534279090692050846, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_Name
-      value: ui_dummy_wheel_reward_image_value
-      objectReference: {fileID: 0}
-    - target: {fileID: 3534279090773864290, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_Name
-      value: ui_dummy_wheel_reward_image_value
-      objectReference: {fileID: 0}
-    - target: {fileID: 3534279090920513496, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_Name
-      value: ui_dummy_wheel_reward_image_value
-      objectReference: {fileID: 0}
-    - target: {fileID: 3534279091857464565, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_Name
-      value: ui_dummy_wheel_reward_image_value
-      objectReference: {fileID: 0}
-    - target: {fileID: 3534279091931857953, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_Name
-      value: ui_dummy_wheel_reward_image_value
-      objectReference: {fileID: 0}
-    - target: {fileID: 3534279092353064454, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_Name
-      value: ui_dummy_wheel_reward_image_value
-      objectReference: {fileID: 0}
-    - target: {fileID: 3534279092400253358, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_Name
-      value: ui_dummy_wheel_reward_image_value
-      objectReference: {fileID: 0}
-    - target: {fileID: 3534279092431207195, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_Name
-      value: ui_dummy_wheel_reward_image_value
-      objectReference: {fileID: 0}
     - target: {fileID: 4540525782825449160, guid: 87628e50fcc14a44695a5e27b8b59727,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -770,26 +746,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7085319491183309132, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7326331137823524663, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7326331137823524663, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7326331137823524663, guid: 87628e50fcc14a44695a5e27b8b59727,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7326331137823524663, guid: 87628e50fcc14a44695a5e27b8b59727,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
@@ -992,11 +948,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2056248527}
     m_Modifications:
-    - target: {fileID: 3332747500362384281, guid: 01940e0d1c2cf1f4cb92d1f64c73de0b,
-        type: 3}
-      propertyPath: rewardMultiplierIncreaseRate
-      value: 0.05
-      objectReference: {fileID: 0}
     - target: {fileID: 3332747501028363169, guid: 01940e0d1c2cf1f4cb92d1f64c73de0b,
         type: 3}
       propertyPath: m_Camera

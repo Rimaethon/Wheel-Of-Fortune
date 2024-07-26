@@ -3760,6 +3760,11 @@ PrefabInstance:
       objectReference: {fileID: 941736725}
     - target: {fileID: 8273670953394920207, guid: f762b92719aecee43ab6e7e154243972,
         type: 3}
+      propertyPath: rewardMultiplierIncreaseRate
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8273670953394920207, guid: f762b92719aecee43ab6e7e154243972,
+        type: 3}
       propertyPath: fortuneWheelRewardAnimationHandler
       value: 
       objectReference: {fileID: 2988387573317219944}

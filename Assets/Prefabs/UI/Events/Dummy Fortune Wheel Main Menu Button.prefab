@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 714428487162971656}
   - component: {fileID: 714428487162971659}
   m_Layer: 5
-  m_Name: Possible Reward Icon
+  m_Name: ui_dummy_wheel_reward_image_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 714428487211165428}
   - component: {fileID: 714428487211165389}
   m_Layer: 5
-  m_Name: Possible Reward Icon
+  m_Name: ui_dummy_wheel_reward_image_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 714428487569913522}
   - component: {fileID: 714428487569913485}
   m_Layer: 5
-  m_Name: Possible Reward Icon
+  m_Name: ui_dummy_wheel_reward_image_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 714428488243705247}
   - component: {fileID: 714428488243705243}
   m_Layer: 5
-  m_Name: Possible Reward Icon
+  m_Name: ui_dummy_wheel_reward_image_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 714428488724917579}
   - component: {fileID: 714428488724917578}
   m_Layer: 5
-  m_Name: Possible Reward Icon
+  m_Name: ui_dummy_wheel_reward_image_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 714428488737961836}
   - component: {fileID: 714428488737961829}
   m_Layer: 5
-  m_Name: Possible Reward Icon
+  m_Name: ui_dummy_wheel_reward_image_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 714428488793522372}
   - component: {fileID: 714428488793522397}
   m_Layer: 5
-  m_Name: Possible Reward Icon
+  m_Name: ui_dummy_wheel_reward_image_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 714428489215627889}
   - component: {fileID: 714428489215627888}
   m_Layer: 5
-  m_Name: Possible Reward Icon
+  m_Name: ui_dummy_wheel_reward_image_value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 4524705617336880749}
   - component: {fileID: 4524705617336880786}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Fortune Wheel Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -744,9 +744,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
