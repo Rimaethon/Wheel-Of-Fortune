@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -25,6 +26,19 @@ namespace UI.Buttons
 		}
 
 		private void OnValidate()
+		{
+			if (Button == null)
+			{
+				Button = GetComponent<Button>();
+			}
+
+			if (RectTransform == null)
+			{
+				RectTransform = GetComponent<RectTransform>();
+			}
+		}
+
+		private void Awake()
 		{
 			if (Button == null)
 			{

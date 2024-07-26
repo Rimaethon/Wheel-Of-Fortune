@@ -69,6 +69,7 @@ namespace UI.Fortune_Wheel_Event
 
 		private void Awake()
 		{
+			CheckComponents();
 			if (rewardElements.Count == 0)
 			{
 				rewardElements = wheelTransform.GetComponentsInChildren<FortuneWheelItemView>().ToList();
@@ -84,6 +85,22 @@ namespace UI.Fortune_Wheel_Event
 
 		}
 
+		private void OnValidate()
+		{
+			CheckComponents();
+		}
+		private void CheckComponents()
+		{
+			if (spinButton == null)
+			{
+				spinButton = GetComponentInChildren<UnityEngine.UI.Button>();
+			}
+			if (rewardElements.Count == 0)
+			{
+				rewardElements = wheelTransform.GetComponentsInChildren<FortuneWheelItemView>().ToList();
+			}
+		}
+
 		private void OnEnable()
 		{
 			spinButton.onClick.AddListener(SpinWheel);
@@ -96,19 +113,6 @@ namespace UI.Fortune_Wheel_Event
 		private void OnDisable()
 		{
 			spinButton.onClick.RemoveListener(SpinWheel);
-		}
-
-		private void OnValidate()
-		{
-			if (spinButton != null)
-			{
-				return;
-			}
-			spinButton = GetComponentInChildren<UnityEngine.UI.Button>();
-			if (rewardElements.Count == 0)
-			{
-				rewardElements = wheelTransform.GetComponentsInChildren<FortuneWheelItemView>().ToList();
-			}
 		}
 
 		private void InitializeEventData(SpinRewardListSO rewardList,bool isSafeLevel = false)
@@ -138,9 +142,7 @@ namespace UI.Fortune_Wheel_Event
 		private void SpinWheel()
 		{
 			if (_isSpinning||_currentLevel==LastLevel)
-			{
 				return;
-			}
 
 			_isSpinning = true;
 			float randomChance = Random.Range(0, cumulativeChance);
@@ -204,8 +206,6 @@ namespace UI.Fortune_Wheel_Event
 				return;
 			}
 			InitializeEventData(lowTierRewardList);
-
-
 		}
 	}
 }
