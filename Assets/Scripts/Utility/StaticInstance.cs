@@ -6,19 +6,19 @@ namespace Utility
     #region Static Instance
 	public abstract class StaticInstance<T> : MonoBehaviour where T : MonoBehaviour
 	{
-		private static T _instance;
+		private static T sInstance;
 
-		public static T Instance
+		public static T SInstance
 		{
 			get {
-				if (_instance != null) return _instance;
+				if (sInstance != null) return sInstance;
 
-				_instance = FindObjectOfType<T>();
+				sInstance = FindObjectOfType<T>();
 
-				if (_instance != null) return _instance;
+				if (sInstance != null) return sInstance;
 				return null;
 			}
-			protected set => _instance = value;
+			protected set => sInstance = value;
 		}
 
 		protected virtual void Awake()
@@ -30,7 +30,7 @@ namespace Utility
 		{
 			if (this is T instance)
 			{
-				Instance = instance;
+				SInstance = instance;
 			}
 			else
 			{
@@ -49,14 +49,14 @@ namespace Utility
 
 			if (this is T instance)
 			{
-				if (Instance != null && Instance != this)
+				if (SInstance != null && SInstance != this)
 				{
 					Debug.LogWarning($"Instance of type {typeof(T)} already exists. Destroying {gameObject.name}.");
 					Destroy(gameObject);
 				}
 				else
 				{
-					Instance = instance;
+					SInstance = instance;
 				}
 
 			}
@@ -83,19 +83,19 @@ namespace Utility
     #region Private Singleton
 	public abstract class PrivateSingleton<T> : MonoBehaviour where T : MonoBehaviour
 	{
-		private static T _instance;
+		private static T sInstance;
 
 		protected virtual void Awake()
 		{
 			if (this is T instance)
 			{
-				if (_instance != null && _instance != this)
+				if (sInstance != null && sInstance != this)
 				{
 					Destroy(gameObject);
 				}
 				else
 				{
-					_instance = instance;
+					sInstance = instance;
 				}
 			}
 			else

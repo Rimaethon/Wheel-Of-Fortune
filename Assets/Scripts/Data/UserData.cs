@@ -12,15 +12,15 @@ namespace Data
 		public UserData()
 		{
 			playerInventoryData = new PlayerInventoryData();
-			playerInventoryData.InventoryData.Add(ItemTypes.Currency, new Dictionary<int, ItemData>());
+			playerInventoryData.InventoryData.Add(ItemTypes.CURRENCY, new Dictionary<int, ItemData>());
 
-			playerInventoryData.InventoryData[ItemTypes.Currency]
+			playerInventoryData.InventoryData[ItemTypes.CURRENCY]
 							   .Add((int) CurrencyType.Gold, new ItemData
 							   {
 								   Amount = 6000
 							   });
 
-			playerInventoryData.InventoryData[ItemTypes.Currency]
+			playerInventoryData.InventoryData[ItemTypes.CURRENCY]
 							   .Add((int) CurrencyType.Cash, new ItemData
 							   {
 								   Amount = 12000

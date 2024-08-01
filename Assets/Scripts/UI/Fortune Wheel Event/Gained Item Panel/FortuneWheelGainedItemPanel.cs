@@ -45,7 +45,6 @@ namespace UI.Fortune_Wheel_Event.Gained_Item_Panel
 				fortuneWheelGainedItemView.itemIcon.sprite = data.sprite;
 				fortuneWheelGainedItemView.itemType = data.ItemData.ItemType;
 
-				//For updating the icon position
 				Canvas.ForceUpdateCanvases();
 			}
 

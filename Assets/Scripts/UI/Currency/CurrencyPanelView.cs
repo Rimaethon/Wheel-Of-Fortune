@@ -32,30 +32,30 @@ namespace UI.Currency
 
 		private void OnEnable()
 		{
-			EventManager.Instance.AddHandler(GameEvents.OnGoldAmountChanged, HandleGoldChange);
-			EventManager.Instance.AddHandler(GameEvents.OnCashAmountChanged, HandleCashChange);
+			EventManager.SInstance.AddHandler(GameEvents.OnGoldAmountChanged, HandleGoldChange);
+			EventManager.SInstance.AddHandler(GameEvents.ON_CASH_AMOUNT_CHANGED, HandleCashChange);
 
 		}
 
 		private void OnDisable()
 		{
-			if (EventManager.Instance == null)
+			if (EventManager.SInstance == null)
 			{
 				return;
 			}
 
-			EventManager.Instance.RemoveHandler(GameEvents.OnGoldAmountChanged, HandleGoldChange);
-			EventManager.Instance.RemoveHandler(GameEvents.OnCashAmountChanged, HandleCashChange);
+			EventManager.SInstance.RemoveHandler(GameEvents.OnGoldAmountChanged, HandleGoldChange);
+			EventManager.SInstance.RemoveHandler(GameEvents.ON_CASH_AMOUNT_CHANGED, HandleCashChange);
 		}
 
 		private void HandleGoldChange()
 		{
-			HandleCurrencyString(goldAmountText, SaveManager.Instance.GetGoldAmount());
+			HandleCurrencyString(goldAmountText, SaveManager.SInstance.GetGoldAmount());
 		}
 
 		private void HandleCashChange()
 		{
-			HandleCurrencyString(cashAmountText, SaveManager.Instance.GetCashAmount());
+			HandleCurrencyString(cashAmountText, SaveManager.SInstance.GetCashAmount());
 		}
 
 		private void HandleCurrencyString(TextMeshProUGUI amountText, int amount)

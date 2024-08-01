@@ -2,11 +2,11 @@
 {
 	public enum ItemAcquireTypes
 	{
-		Default=0,
-		Cash=1,
-		Coin=2,
-		Item_Card=3,
-		Battle_Pass=4,
-		Event=5
+		DEFAULT=0,
+		CASH=1,
+		COIN=2,
+		ITEM_CARD=3,
+		BATTLE_PASS=4,
+		EVENT=5
 	}
 }

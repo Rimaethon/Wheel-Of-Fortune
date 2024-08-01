@@ -7,6 +7,7 @@ namespace UI.Buttons
 {
 	public abstract class UIButton : MonoBehaviour, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
 	{
+		[SerializeField]
 		protected Button Button;
 		protected RectTransform RectTransform;
 		protected Tween ScaleDownTween;

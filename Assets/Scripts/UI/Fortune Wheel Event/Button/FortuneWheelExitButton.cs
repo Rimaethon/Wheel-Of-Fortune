@@ -1,8 +1,6 @@
 ﻿using Enums;
 using Managers;
-using TMPro;
 using UI.Buttons;
-using UnityEngine;
 
 namespace UI.Fortune_Wheel_Event.Button
 {
@@ -11,7 +9,7 @@ namespace UI.Fortune_Wheel_Event.Button
 		protected override void DoOnClick()
 		{
 			base.DoOnClick();
-			EventManager.Instance.Broadcast(GameEvents.OnFortuneWheelExitButtonClicked);
+			EventManager.SInstance.Broadcast(GameEvents.OnFortuneWheelExitButtonClicked);
 		}
 	}
 }

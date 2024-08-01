@@ -51,7 +51,7 @@ namespace UI.Fortune_Wheel_Event.Level_Panel
 		private void OnEnable()
 		{
 			InitializeNumberElements();
-			EventManager.Instance.AddHandler(GameEvents.FortuneWheelLevelChanged, HandleLevelChanged);
+			EventManager.SInstance.AddHandler(GameEvents.FortuneWheelLevelChanged, HandleLevelChanged);
 		}
 
 		private void OnDisable()
@@ -62,9 +62,9 @@ namespace UI.Fortune_Wheel_Event.Level_Panel
 			}
 			numberUIElements.Clear();
 			currentLevel = 1;
-			if (EventManager.Instance == null)
+			if (EventManager.SInstance == null)
 				return;
-			EventManager.Instance.RemoveHandler(GameEvents.FortuneWheelLevelChanged, HandleLevelChanged);
+			EventManager.SInstance.RemoveHandler(GameEvents.FortuneWheelLevelChanged, HandleLevelChanged);
 		}
 
 		private void HandleLevelChanged()

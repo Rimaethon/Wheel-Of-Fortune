@@ -40,7 +40,7 @@ MonoBehaviour:
       Data: 0
     - Name: EquipmentTier
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: Material
       Entry: 6
       Data: 

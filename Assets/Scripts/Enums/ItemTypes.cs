@@ -2,11 +2,11 @@
 {
 	public enum ItemTypes
 	{
-		Weapon = 0,
-		Armor = 1,
-		Skin = 2,
-		UpgradePoint = 4,
-		Chest = 5,
-		Currency = 6
+		WEAPON = 0,
+		ARMOR = 1,
+		SKIN = 2,
+		UPGRADE_POINT = 4,
+		CHEST = 5,
+		CURRENCY = 6
 	}
 }

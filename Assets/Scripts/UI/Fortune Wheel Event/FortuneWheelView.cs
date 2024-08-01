@@ -14,16 +14,13 @@ namespace UI.Fortune_Wheel_Event
 {
 	public class FortuneWheelView : MonoBehaviour
 	{
-		public bool IsSpinning => _isSpinning;
+		public bool IsSpinning => isSpinning;
 
 		[ShowInInspector]
 		private UnityEngine.UI.Button spinButton;
 
 		[SerializeField]
 		private RectTransform wheelTransform;
-
-		[SerializeField]
-		private GameObject GainedPrizesHolder;
 
 		[SerializeField]
 		private FortuneWheelGainedItemPanel fortuneWheelGainedItemPanel;
@@ -46,26 +43,30 @@ namespace UI.Fortune_Wheel_Event
 		private float rewardMultiplierIncreaseRate = 0.2f;
 
 		[SerializeField]
+		private int fullRotationAngle = 360;
+
+		[SerializeField]
 		private int LastLevel = 60;
 
 		[SerializeField]
 		private Sprite bombSprite;
+
 		[SerializeField]
 		private string bombName;
+
 		[Range(0, 1), SerializeField]
 		private float bombChance;
 		private SpinRewardData bombData;
-
 		private List<FortuneWheelItemView> rewardElements = new List<FortuneWheelItemView>();
-		private readonly List<float> _cumulativeChances = new List<float>();
+		private readonly List<float> cumulativeChances = new List<float>();
 		private float cumulativeChance;
 		private int numberOfSlots;
-		private bool _isSpinning;
-		private int BombIndex;
-		private int _currentLevel=1;
+		private bool isSpinning;
+		private int bombIndex;
+		private int currentLevel=1;
 		private const float angle_between_prizes = 45f;
-		private bool _isSafeLevel = true;
-		private float _currentRewardMultiplier = 1;
+		private bool isSafeLevel = true;
+		private float currentRewardMultiplier = 1;
 
 		private void Awake()
 		{
@@ -100,9 +101,9 @@ namespace UI.Fortune_Wheel_Event
 		private void OnEnable()
 		{
 			spinButton.onClick.AddListener(SpinWheel);
-			_cumulativeChances.Clear();
+			cumulativeChances.Clear();
 			cumulativeChance = 0;
-			_currentLevel = 1;
+			currentLevel = 1;
 			InitializeEventData(lowTierRewardList,true);
 		}
 
@@ -117,51 +118,49 @@ namespace UI.Fortune_Wheel_Event
 			for (int i = 0; i < numberOfSlots - 1; i++)
 			{
 				cumulativeChance += rewardList.Database[i].BaseChance;
-				_cumulativeChances.Add(cumulativeChance);
-				rewardElements[i].InitializeReward(rewardList.Database[i], _currentRewardMultiplier);
+				cumulativeChances.Add(cumulativeChance);
+				rewardElements[i].InitializeReward(rewardList.Database[i], currentRewardMultiplier);
 			}
-			_isSafeLevel = isSafeLevel;
+			this.isSafeLevel = isSafeLevel;
 			if (isSafeLevel)
 			{
 				cumulativeChance += rewardList.Database[numberOfSlots - 1].BaseChance;
-				_cumulativeChances.Add(cumulativeChance);
-				rewardElements[numberOfSlots - 1].InitializeReward(rewardList.Database[numberOfSlots - 1], _currentRewardMultiplier);
+				cumulativeChances.Add(cumulativeChance);
+				rewardElements[numberOfSlots - 1].InitializeReward(rewardList.Database[numberOfSlots - 1], currentRewardMultiplier);
 			}
 			else
 			{
 				cumulativeChance += bombChance;
-				_cumulativeChances.Add(cumulativeChance);
-				rewardElements[numberOfSlots - 1].InitializeReward(bombData, _currentRewardMultiplier);
+				cumulativeChances.Add(cumulativeChance);
+				rewardElements[numberOfSlots - 1].InitializeReward(bombData, currentRewardMultiplier);
 			}
 		}
 
 		private void SpinWheel()
 		{
-			if (_isSpinning||_currentLevel==LastLevel)
+			if (isSpinning||currentLevel==LastLevel)
 				return;
 
-			_isSpinning = true;
+			isSpinning = true;
 			float randomChance = Random.Range(0, cumulativeChance);
 			int prizeIndex = 0;
 
-			for (int i = 0; i < _cumulativeChances.Count; i++)
+			for (int i = 0; i < cumulativeChances.Count; i++)
 			{
-				if (randomChance <= _cumulativeChances[i])
-				{
-					prizeIndex = i;
-					break;
-				}
+				if (!(randomChance <= cumulativeChances[i])) continue;
+				prizeIndex = i;
+				break;
 			}
 
 			float angleToPrize = prizeIndex * angle_between_prizes;
-			float randomAngle = 720 + angleToPrize;
+			float randomAngle = (fullRotationAngle*prizeIndex) + angleToPrize;
 
 			wheelTransform.DORotate(new Vector3(0, 0, randomAngle), 2f, RotateMode.FastBeyond360)
 						  .SetUpdate(UpdateType.Fixed)
 						  .SetEase(Ease.OutQuint)
 						  .onComplete += () =>
 										 {
-											  EventManager.Instance.Broadcast(GameEvents.FortuneWheelLevelChanged);
+											  EventManager.SInstance.Broadcast(GameEvents.FortuneWheelLevelChanged);
 											  CalculateReward().Forget();
 										 };
 		}
@@ -169,34 +168,34 @@ namespace UI.Fortune_Wheel_Event
 		private async UniTask CalculateReward()
 		{
 			int rotateIndex = (int) Mathf.Abs((wheelTransform.rotation.eulerAngles.z + angle_between_prizes / 2) % 360 / angle_between_prizes);
-			_currentLevel++;
-			if (rotateIndex == 7&&!_isSafeLevel)
+			currentLevel++;
+			if (rotateIndex == 7&&!isSafeLevel)
 			{
-				EventManager.Instance.Broadcast(GameEvents.OnFortuneWheelBombExploded);
-				_isSpinning = false;
+				EventManager.SInstance.Broadcast(GameEvents.OnFortuneWheelBombExploded);
+				isSpinning = false;
 				return;
 			}
 			await fortuneWheelRewardAnimationHandler.PlayGainedItemEffect(rewardElements[rotateIndex].transform.position,
-																		  fortuneWheelGainedItemPanel.GetGainedItemIconPosition(currentRewardList.Database[rotateIndex], _currentRewardMultiplier)
+																		  fortuneWheelGainedItemPanel.GetGainedItemIconPosition(currentRewardList.Database[rotateIndex], currentRewardMultiplier)
 																		, currentRewardList.Database[rotateIndex].sprite);
 
 			await UniTask.Delay(400);
-			_currentRewardMultiplier += rewardMultiplierIncreaseRate*_currentRewardMultiplier;
+			currentRewardMultiplier += rewardMultiplierIncreaseRate*currentRewardMultiplier;
 			HandleTierChange();
-			_isSpinning = false;
+			isSpinning = false;
 		}
 
 		private void HandleTierChange()
 		{
 			cumulativeChance = 0;
-			_cumulativeChances.Clear();
-			if(_currentLevel%30==0)
+			cumulativeChances.Clear();
+			if(currentLevel%30==0)
 			{
 				InitializeEventData(highTierRewardList,true);
 				return;
 			}
 
-			if (_currentLevel % 5 == 0)
+			if (currentLevel % 5 == 0)
 			{
 				InitializeEventData(midTierRewardList,true);
 				return;

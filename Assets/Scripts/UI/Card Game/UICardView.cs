@@ -6,13 +6,13 @@ namespace UI.Card_Game_Event
 {
 	public class UICardView : MonoBehaviour
 	{
-		private Image CardImage;
-		private TextMeshProUGUI CardText;
+		private Image cardImage;
+		private TextMeshProUGUI cardText;
 
 		private void Awake()
 		{
-			CardText = GetComponentInChildren<TextMeshProUGUI>();
-			CardImage = GetComponentInChildren<Image>();
+			cardText = GetComponentInChildren<TextMeshProUGUI>();
+			cardImage = GetComponentInChildren<Image>();
 		}
 	}
 }

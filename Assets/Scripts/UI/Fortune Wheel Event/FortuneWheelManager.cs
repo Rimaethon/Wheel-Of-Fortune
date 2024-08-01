@@ -1,5 +1,4 @@
-﻿using System;
-using Enums;
+﻿using Enums;
 using Managers;
 using UnityEngine;
 
@@ -8,7 +7,7 @@ namespace UI.Fortune_Wheel_Event
 	public class FortuneWheelManager : MonoBehaviour
 	{
 		[SerializeField]
-		private GameObject BombExplodedView;
+		private GameObject bombExplodedView;
 
 		[SerializeField]
 		private FortuneWheelView fortuneWheelView;
@@ -19,40 +18,40 @@ namespace UI.Fortune_Wheel_Event
 
 		private void OnEnable()
 		{
-			EventManager.Instance.AddHandler<int>(GameEvents.OnFortuneWheelReviveButtonClicked, HandleReviveButtonClicked);
-			EventManager.Instance.AddHandler(GameEvents.OnFortuneWheelBombExploded, HandleFortuneWheelBombExploded);
-			EventManager.Instance.AddHandler(GameEvents.OnFortuneWheelExitButtonClicked, HandleExitButtonClicked);
+			EventManager.SInstance.AddHandler<int>(GameEvents.ON_FORTUNE_WHEEL_REVIVE_BUTTON_CLICKED, HandleReviveButtonClicked);
+			EventManager.SInstance.AddHandler(GameEvents.OnFortuneWheelBombExploded, HandleFortuneWheelBombExploded);
+			EventManager.SInstance.AddHandler(GameEvents.OnFortuneWheelExitButtonClicked, HandleExitButtonClicked);
 		}
 
 		private void OnDisable()
 		{
-			if (EventManager.Instance == null)
+			if (EventManager.SInstance == null)
 				return;
 
-			EventManager.Instance.RemoveHandler<int>(GameEvents.OnFortuneWheelReviveButtonClicked, HandleReviveButtonClicked);
-			EventManager.Instance.RemoveHandler(GameEvents.OnFortuneWheelBombExploded, HandleFortuneWheelBombExploded);
-			EventManager.Instance.RemoveHandler(GameEvents.OnFortuneWheelExitButtonClicked, HandleExitButtonClicked);
+			EventManager.SInstance.RemoveHandler<int>(GameEvents.ON_FORTUNE_WHEEL_REVIVE_BUTTON_CLICKED, HandleReviveButtonClicked);
+			EventManager.SInstance.RemoveHandler(GameEvents.OnFortuneWheelBombExploded, HandleFortuneWheelBombExploded);
+			EventManager.SInstance.RemoveHandler(GameEvents.OnFortuneWheelExitButtonClicked, HandleExitButtonClicked);
 		}
 
 		private void HandleFortuneWheelBombExploded()
 		{
 			isBombScreenOpen = true;
-			BombExplodedView.SetActive(true);
+			bombExplodedView.SetActive(true);
 		}
 
 		private void HandleReviveButtonClicked(int goldAmount)
 		{
-			BombExplodedView.SetActive(false);
+			bombExplodedView.SetActive(false);
 			isBombScreenOpen = false;
-			SaveManager.Instance.ChangeGoldAmount(-goldAmount);
+			SaveManager.SInstance.ChangeGoldAmount(-goldAmount);
 		}
 
 		private void HandleExitButtonClicked()
 		{
 			if(isBombScreenOpen||fortuneWheelView.IsSpinning)
 				return;
-			EventManager.Instance.Broadcast(GameEvents.OnFortuneWheelExit);
-			BombExplodedView.SetActive(false);
+			EventManager.SInstance.Broadcast(GameEvents.ON_FORTUNE_WHEEL_EXIT);
+			bombExplodedView.SetActive(false);
 			gameObject.SetActive(false);
 			mainMenuView.SetActive(true);
 		}

@@ -12,7 +12,6 @@ namespace UI.Fortune_Wheel_Event.Gained_Item_Panel
 		public TextMeshProUGUI amountText;
 		public Image itemIcon;
 		public ItemTypes itemType;
-		public int Amount;
 		public RectTransform rectTransform;
 
 		private void Awake()

@@ -11,7 +11,7 @@ namespace Managers
 	public class SaveManager : PersistentSingleton<SaveManager>
 	{
 		private const string extension = ".json";
-		private const string userDataPath = "/UserData";
+		private const string user_data_path = "/UserData";
 		private UserData userData;
 
 		private void OnEnable()
@@ -21,39 +21,39 @@ namespace Managers
 
 		private void InitializeData()
 		{
-			if (File.Exists(Application.persistentDataPath + userDataPath))
+			if (File.Exists(Application.persistentDataPath + user_data_path))
 			{
-				userData = LoadFromJson<UserData>(userDataPath);
+				userData = LoadFromJson<UserData>(user_data_path);
 			}
 			else
 			{
 				userData = new UserData();
-				SaveToJson(userData, userDataPath);
+				SaveToJson(userData, user_data_path);
 			}
 		}
 
 		public int GetGoldAmount()
 		{
-			return userData.playerInventoryData.InventoryData[ItemTypes.Currency][(int) CurrencyType.Gold].Amount;
+			return userData.playerInventoryData.InventoryData[ItemTypes.CURRENCY][(int) CurrencyType.Gold].Amount;
 		}
 
 		public int GetCashAmount()
 		{
-			return userData.playerInventoryData.InventoryData[ItemTypes.Currency][(int) CurrencyType.Cash].Amount;
+			return userData.playerInventoryData.InventoryData[ItemTypes.CURRENCY][(int) CurrencyType.Cash].Amount;
 		}
 
 		public void ChangeGoldAmount(int amount)
 		{
-			userData.playerInventoryData.InventoryData[ItemTypes.Currency][(int) CurrencyType.Gold].Amount += amount;
-			SaveToJson(userData, userDataPath);
-			EventManager.Instance.Broadcast(GameEvents.OnGoldAmountChanged);
+			userData.playerInventoryData.InventoryData[ItemTypes.CURRENCY][(int) CurrencyType.Gold].Amount += amount;
+			SaveToJson(userData, user_data_path);
+			EventManager.SInstance.Broadcast(GameEvents.OnGoldAmountChanged);
 		}
 
 		public void ChangeCashAmount(int amount)
 		{
-			userData.playerInventoryData.InventoryData[ItemTypes.Currency][(int) CurrencyType.Cash].Amount += amount;
-			SaveToJson(userData, userDataPath);
-			EventManager.Instance.Broadcast(GameEvents.OnCashAmountChanged);
+			userData.playerInventoryData.InventoryData[ItemTypes.CURRENCY][(int) CurrencyType.Cash].Amount += amount;
+			SaveToJson(userData, user_data_path);
+			EventManager.SInstance.Broadcast(GameEvents.ON_CASH_AMOUNT_CHANGED);
 		}
 
 		private int GetNumberOfFilesInFolder(string folderPath)

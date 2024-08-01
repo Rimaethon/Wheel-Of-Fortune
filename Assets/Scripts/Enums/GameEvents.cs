@@ -6,8 +6,8 @@ namespace Enums
 		OnFortuneWheelExitButtonClicked,
 		OnFortuneWheelBombExploded,
 		OnGoldAmountChanged,
-		OnCashAmountChanged,
-		OnFortuneWheelReviveButtonClicked,
-		OnFortuneWheelExit
+		ON_CASH_AMOUNT_CHANGED,
+		ON_FORTUNE_WHEEL_REVIVE_BUTTON_CLICKED,
+		ON_FORTUNE_WHEEL_EXIT
 	}
 }
