@@ -21,39 +21,32 @@ namespace UI.Currency
 			rectTransform = GetComponent<RectTransform>();
 			goldAmountText = goldPanel.GetComponentInChildren<TextMeshProUGUI>();
 			cashAmountText = cashPanel.GetComponentInChildren<TextMeshProUGUI>();
-
 		}
 
 		private void Start()
 		{
-			HandleGoldChange();
-			HandleCashChange();
+			HandleGoldChange( new OnGoldAmountChangedEventBase());
+			HandleCashChange(new OnCashAmountChangedEventBase());
 		}
 
 		private void OnEnable()
 		{
-			EventManager.SInstance.AddHandler(GameEvents.OnGoldAmountChanged, HandleGoldChange);
-			EventManager.SInstance.AddHandler(GameEvents.ON_CASH_AMOUNT_CHANGED, HandleCashChange);
-
+			EventManager.RegisterHandler<OnGoldAmountChangedEventBase>( HandleGoldChange);
+			EventManager.RegisterHandler<OnCashAmountChangedEventBase>( HandleCashChange);
 		}
 
 		private void OnDisable()
 		{
-			if (EventManager.SInstance == null)
-			{
-				return;
-			}
-
-			EventManager.SInstance.RemoveHandler(GameEvents.OnGoldAmountChanged, HandleGoldChange);
-			EventManager.SInstance.RemoveHandler(GameEvents.ON_CASH_AMOUNT_CHANGED, HandleCashChange);
+			EventManager.UnregisterHandler<OnGoldAmountChangedEventBase>( HandleGoldChange);
+			EventManager.UnregisterHandler<OnCashAmountChangedEventBase>( HandleCashChange);
 		}
 
-		private void HandleGoldChange()
+		private void HandleGoldChange(OnGoldAmountChangedEventBase obj)
 		{
 			HandleCurrencyString(goldAmountText, SaveManager.SInstance.GetGoldAmount());
 		}
 
-		private void HandleCashChange()
+		private void HandleCashChange(OnCashAmountChangedEventBase obj)
 		{
 			HandleCurrencyString(cashAmountText, SaveManager.SInstance.GetCashAmount());
 		}

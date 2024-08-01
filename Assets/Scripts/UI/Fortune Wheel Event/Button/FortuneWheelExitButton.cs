@@ -9,7 +9,7 @@ namespace UI.Fortune_Wheel_Event.Button
 		protected override void DoOnClick()
 		{
 			base.DoOnClick();
-			EventManager.SInstance.Broadcast(GameEvents.OnFortuneWheelExitButtonClicked);
+			EventManager.Send(new OnFortuneWheelExitButtonClicked());
 		}
 	}
 }

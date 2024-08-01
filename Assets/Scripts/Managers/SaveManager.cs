@@ -46,14 +46,14 @@ namespace Managers
 		{
 			userData.playerInventoryData.InventoryData[ItemTypes.CURRENCY][(int) CurrencyType.Gold].Amount += amount;
 			SaveToJson(userData, user_data_path);
-			EventManager.SInstance.Broadcast(GameEvents.OnGoldAmountChanged);
+			EventManager.Send(new OnGoldAmountChangedEventBase());
 		}
 
 		public void ChangeCashAmount(int amount)
 		{
 			userData.playerInventoryData.InventoryData[ItemTypes.CURRENCY][(int) CurrencyType.Cash].Amount += amount;
 			SaveToJson(userData, user_data_path);
-			EventManager.SInstance.Broadcast(GameEvents.ON_CASH_AMOUNT_CHANGED);
+			EventManager.Send(new OnCashAmountChangedEventBase());
 		}
 
 		private int GetNumberOfFilesInFolder(string folderPath)

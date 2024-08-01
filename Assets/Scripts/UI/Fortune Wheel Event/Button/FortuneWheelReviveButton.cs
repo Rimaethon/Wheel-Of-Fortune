@@ -22,19 +22,27 @@ namespace UI.Fortune_Wheel_Event.Button
 		protected override void OnEnable()
 		{
 			base.OnEnable();
-			EventManager.SInstance.AddHandler(GameEvents.ON_FORTUNE_WHEEL_EXIT, () => reviveCount=1);
+			EventManager.RegisterHandler<OnFortuneWheelExit>(HandleFortuneWheelExit);
+		}
+
+		private void HandleFortuneWheelExit(OnFortuneWheelExit obj)
+		{
+			reviveCount = 1;
 		}
 
 		protected override void OnDisable()
 		{
 			base.OnDisable();
-			EventManager.SInstance.RemoveHandler(GameEvents.ON_FORTUNE_WHEEL_EXIT, () => reviveCount=1);
+			EventManager.UnregisterHandler<OnFortuneWheelExit>(HandleFortuneWheelExit);
+
 		}
 
 		protected override void DoOnClick()
 		{
 			base.DoOnClick();
-			EventManager.SInstance.Broadcast(GameEvents.ON_FORTUNE_WHEEL_REVIVE_BUTTON_CLICKED, reviveCount * initialReviveCost);
+			OnFortuneWheelReviveButtonClicked onFortuneWheelReviveButtonClicked = new OnFortuneWheelReviveButtonClicked();
+			onFortuneWheelReviveButtonClicked.amount = reviveCount * initialReviveCost;
+			EventManager.Send(onFortuneWheelReviveButtonClicked);
 			reviveCount++;
 			goldAmountText.text = (reviveCount * initialReviveCost).ToString();
 		}

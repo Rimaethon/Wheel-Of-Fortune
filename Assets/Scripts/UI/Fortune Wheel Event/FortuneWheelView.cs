@@ -160,7 +160,7 @@ namespace UI.Fortune_Wheel_Event
 						  .SetEase(Ease.OutQuint)
 						  .onComplete += () =>
 										 {
-											  EventManager.SInstance.Broadcast(GameEvents.FortuneWheelLevelChanged);
+											 EventManager.Send( new OnFortuneWheelLevelChanged());
 											  CalculateReward().Forget();
 										 };
 		}
@@ -171,7 +171,7 @@ namespace UI.Fortune_Wheel_Event
 			currentLevel++;
 			if (rotateIndex == 7&&!isSafeLevel)
 			{
-				EventManager.SInstance.Broadcast(GameEvents.OnFortuneWheelBombExploded);
+				EventManager.Send( new OnFortuneWheelBombExploded());
 				isSpinning = false;
 				return;
 			}
