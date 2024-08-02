@@ -1,53 +1,69 @@
 using System;
 using System.Collections.Generic;
 using Event_System;
-using UnityEngine;
 
 namespace Managers
 {
 	public static class EventManager
 	{
-		public static void RegisterHandler<EventType>(Action<EventType> handler) where EventType : EventBase
+		public static void RegisterHandler<TEventType>(Action<TEventType> handler) where TEventType : EventBase
 		{
-			EventHandlers<EventType>.Register(handler);
+			EventHandlers<TEventType>.Register(handler);
 		}
 
-		public static void UnregisterHandler<EventType>(Action<EventType> handler) where EventType : EventBase
+		public static void UnregisterHandler<TEventType>(Action<TEventType> handler) where TEventType : EventBase
 		{
-			EventHandlers<EventType>.Unregister(handler);
+			EventHandlers<TEventType>.Unregister(handler);
 
 		}
-		public static void Send<EventType>(EventType eventData) where EventType : EventBase, new()
+
+		public static void Send<TEventType>(TEventType eventData) where TEventType : EventBase, new()
 		{
-			Debug.Log("event send"+ eventData.GetType().Name);
-			EventHandlers<EventType>.Handle(eventData);
-		}
-
-		private class EventHandlers<EventType> where EventType : EventBase
-		{
-			private static List<Action<EventType>> handlers;
-			private static EventHandlers<EventType> instance;
-
-			private static EventHandlers<EventType> Instance => (EventHandlers<EventType>) null;
-
-			public static void Register(Action<EventType> handler)
-			{
-				handlers.Add(handler);
-			}
-
-			public static void Unregister(Action<EventType> handler)
-			{
-				handlers.Remove(handler);
-			}
-
-			public static void Handle(EventType eventData)
-			{
-				foreach (var handler in handlers)
-				{
-					handler(eventData);
-				}
-			}
+			EventHandlers<TEventType>.Handle(eventData);
 		}
 	}
 
+	public class EventHandlers<EventType> where EventType : EventBase
+	{
+		private static EventHandlers<EventType> _instance;
+		private List<Action<EventType>> _handlers = new List<Action<EventType>>();
+
+		private static EventHandlers<EventType> Instance
+		{
+			get {
+				if (_instance == null)
+				{
+					_instance = new EventHandlers<EventType>();
+				}
+
+				return _instance;
+			}
+		}
+
+		public static void Register(Action<EventType> handler)
+		{
+			if (!Instance._handlers.Contains(handler))
+			{
+				Instance._handlers.Add(handler);
+			}
+		}
+
+		public static void Unregister(Action<EventType> handler)
+		{
+			if (Instance._handlers.Contains(handler))
+			{
+				Instance._handlers.Remove(handler);
+			}
+		}
+
+		public static void Handle(EventType eventData)
+		{
+			List<Action<EventType>> handlers = new List<Action<EventType>>(Instance._handlers);
+
+			foreach (Action<EventType> handler in handlers)
+			{
+				handler.Invoke(eventData);
+			}
+		}
+	}
 }

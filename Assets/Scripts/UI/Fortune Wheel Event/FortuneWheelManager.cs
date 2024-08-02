@@ -18,6 +18,7 @@ namespace UI.Fortune_Wheel_Event
 
 		private void OnEnable()
 		{
+
 			EventManager.RegisterHandler<OnFortuneWheelReviveButtonClicked>(HandleReviveButtonClicked);
 			EventManager.RegisterHandler<OnFortuneWheelBombExploded>(HandleFortuneWheelBombExploded);
 			EventManager.RegisterHandler<OnFortuneWheelExitButtonClicked>(HandleExitButtonClicked);
@@ -25,7 +26,6 @@ namespace UI.Fortune_Wheel_Event
 
 		private void HandleExitButtonClicked(OnFortuneWheelExitButtonClicked obj)
 		{
-			Debug.Log("Exit button clicked");
 			if(isBombScreenOpen||fortuneWheelView.IsSpinning)
 				return;
 			EventManager.Send(new OnFortuneWheelBombExploded());

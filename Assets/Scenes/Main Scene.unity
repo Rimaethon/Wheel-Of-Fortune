@@ -418,6 +418,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &719847802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1452916848, guid: 01940e0d1c2cf1f4cb92d1f64c73de0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3332747501619613938}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,6 +1094,11 @@ PrefabInstance:
       propertyPath: mainMenuView
       value: 
       objectReference: {fileID: 8898807336688497442}
+    - target: {fileID: 3332747501619613940, guid: 01940e0d1c2cf1f4cb92d1f64c73de0b,
+        type: 3}
+      propertyPath: bombExplodedView
+      value: 
+      objectReference: {fileID: 719847802}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01940e0d1c2cf1f4cb92d1f64c73de0b, type: 3}
 --- !u!1 &8898807336688497442 stripped
